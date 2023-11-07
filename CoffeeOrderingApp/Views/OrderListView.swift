@@ -19,6 +19,9 @@ struct OrderListView: View {
         List {
             ForEach(self.order, id: \.id) { order in
                 HStack {
+                    Spacer()
+                    Spacer()
+                    Spacer()
                     Image(order.coffeeName)
                         .resizable()
                         .frame(width: 100, height: 100)
@@ -32,16 +35,13 @@ struct OrderListView: View {
                             Text(order.coffeeName)
                                 .background(Color.gray)
                                 .foregroundColor(Color.white)
-                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                                .cornerRadius(20)
-                                .frame(width: 100, height: 100)
-                            Text(order.size)
-                                .background(Color.red)
-                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                                 .cornerRadius(5)
-                                .frame(width: 100, height: 100)
+                                .frame(width: 100, height: 200)
+                            Text(order.size)
+                                .background(Color.blue)
+                                .cornerRadius(5)
+                                .frame(width: 100, height: 200)
                         }
-                       
                     }
                 }
             }

@@ -13,6 +13,15 @@ struct ContentView: View {
     
     @State private var showModel: Bool = false
     
+    init() {
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor(Color.yellow)
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        
+    }
+    
     var body: some View {
         NavigationView {
             OrderListView(order: orderListVM.orders)
@@ -29,7 +38,6 @@ struct ContentView: View {
                 .sheet(isPresented: $showModel) {
                     AddCoffeeView(isPresented: $showModel)
                 }
-                .background(Color.red)
         }
     }
     
